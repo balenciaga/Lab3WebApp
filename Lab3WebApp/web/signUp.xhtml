@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Lab 3</title>
+    </h:head>
+    
+    <h:body>
+         <h:form id="signup">
+            First Name:<h:inputText id="firstname" value="#{profileController.theModel.firstname}">
+            </h:inputText>  
+            last Name:<h:inputText id="lastname" value="#{profileController.theModel.lastname}">
+            </h:inputText>  
+           Userid:<h:inputText id="username" value="#{profileController.theModel.userid}">
+            </h:inputText>  
+             
+             Password:<h:inputText id="password" value="#{profileController.theModel.password}">
+            </h:inputText>  
+              Confirm Password:<h:inputText id="confirmpassword" value="#{profileController.theModel.confirmpassword}">
+            </h:inputText>  
+              Email:<h:inputText id="email" value="#{profileController.theModel.email}">
+            </h:inputText>  
+              Security Question: <h:inputText id="secquestion" value="#{profileController.theModel.secquestion}">
+            </h:inputText>  
+              Security Answer:<h:inputText id="secanswer" value="#{profileController.theModel.secanswer}">
+            </h:inputText>  
+           </h:form>  
+    </h:body>
+</html>

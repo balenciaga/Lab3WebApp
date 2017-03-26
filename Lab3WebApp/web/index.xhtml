@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Lab 3</title>
+    </h:head>
+    
+    <h:body>
+         <h:form id="signup">
+            First Name:<h:inputText id="firstname" value="#{profileController.theModel.firstname}" required="true" requiredMessage="Please insert firstname">
+                <f:validateLength minimum="2" maximum="25"/>
+            </h:inputText>  
+            <br/>
+            last Name:<h:inputText id="lastname" value="#{profileController.theModel.lastname}" required="true" requiredMessage="Please insert last name">
+                <f:validateLength minimum="2" maximum="25"/>
+            </h:inputText>  <br/>
+           Userid:<h:inputText id="username" value="#{profileController.theModel.userid}" required="true" requiredMessage="Please insert userid">
+            </h:inputText>  <br/>
+             
+             Password:<h:inputText id="password" value="#{profileController.theModel.password}" required="true" requiredMessage="Please insert password">
+                 <f:validateRegex pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})"/>
+            </h:inputText>  <br/>
+              Confirm Password:<h:inputText id="confirmpassword" value="#{profileController.theModel.confirmpassword}" required="true" requiredMessage="Please confirm your password">
+                  <f:validateRegex pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})"/>
+     
+            </h:inputText>  <br/>
+              Email:<h:inputText id="email" value="#{profileController.theModel.email}" required="true" requiredMessage="Please insert email address">
+            </h:inputText>  <br/>
+              Security Question: <h:inputText id="secquestion" value="#{profileController.theModel.secquestion}" required="true" requiredMessage="Please insert security question">
+            </h:inputText>  <br/>
+              Security Answer:<h:inputText id="secanswer" value="#{profileController.theModel.secanswer}" required="true" requiredMessage="Please provide answer to security question">
+            </h:inputText>  <br/>
+            <h:commandButton id="signupform" value="Sign Up" action="#{profileController.getInfo()}"/>
+           </h:form>  
+    </h:body>
+</html>
