@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Bailey Vaglica/ Will McKinley Login Page</title>
+    </h:head>
+    <body>
+        <h:form id="login">
+            Userid: <h:inputText id="userid" value="#{profileController.theModel.userid}" required="true" requiredMessage="Please insert userid">
+                
+            </h:inputText>  
+            <br/>
+            Password:<h:inputText id="password" value="#{profileController.theModel.password}" required="true" requiredMessage="Please insert password">
+                
+            </h:inputText>  <br/>
+            <h:commandButton id="login2" value="login" action="#{profileController.logincheck()}"/>
+           
+<br/><br/>
+ Not a user yet? Click here to sign up: <h:link outcome="index" value="Sign Up" id="signUp" />
+ <br/><br/>
+ To update your information,Click Here: <h:link outcome="update" value="Update" id="update" />
+ <br/><br/>
+Will McKinley/ Bailey Vaglica Login App
+           </h:form>
+    </body>
+</html>

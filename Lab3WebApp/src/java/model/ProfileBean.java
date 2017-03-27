@@ -5,6 +5,7 @@
  */
 package model;
 
+import DAO.ProfileDAO;
 import java.net.PasswordAuthentication;
 import java.util.Properties;
 import javax.activation.DataHandler;
@@ -27,12 +28,14 @@ import javax.mail.internet.MimeMultipart;
 public class ProfileBean {
     private String firstname;
     private String lastname;
-    private String userid;
+    public String userid;
     private String password;
     private String confirmpassword;
     private String email;
     private String secquestion;
     private String secanswer;
+    private String response;
+   
 
     /**
      * @return the firstname
@@ -163,6 +166,8 @@ public class ProfileBean {
         return userInfo;
     }
     //found part of above code on staackoverflow and edited to work with this
+  
+    //below is code given in class
     
     public void sendEmail() {
 

@@ -38,6 +38,9 @@ and open the template in the editor.
               Security Answer:<h:inputText id="secanswer" value="#{profileController.theModel.secanswer}" required="true" requiredMessage="Please provide answer to security question">
             </h:inputText>  <br/>
             <h:commandButton id="signupform" value="Sign Up" action="#{profileController.getInfo()}"/>
+            <br/>
+            <br/>
+            Already a user? Click here to sign in: <h:link outcome="login" value="Sign In" id="login" />
            </h:form>  
     </h:body>
 </html>

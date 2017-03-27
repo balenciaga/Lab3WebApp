@@ -8,6 +8,7 @@ package controller;
 import DAO.ProfileDAO;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import model.ProfileBean;
 
 /**
@@ -15,15 +16,25 @@ import model.ProfileBean;
  * @author IT353S741
  */
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class ProfileController {
 private ProfileBean theModel;
     private String results;
+    private int failedlogin;
+    private boolean loggintrue;
+    private String loginname;
+    private String authentic;
+
+   
     /**
      * Creates a new instance of ProfileController
      */
     public ProfileController() {
         theModel = new ProfileBean();
+        failedlogin=0;
+        loggintrue=false;
+        
+        authentic="Bailey";
     }
 
     /**
@@ -54,5 +65,26 @@ private ProfileBean theModel;
     
     public void setResults(String results) {
         this.results = results;
+    }
+    public String logincheck() {
+        
+        if (failedlogin == 3) {
+            this.results = "You have tried a maximum number of tries, please wait 5 minutes to try again.";
+            return "LoginBad.xhtml";
+            
+        }
+      
+        if (theModel.getUserid().equals("Bailey")){
+            failedlogin=0;
+            loggintrue=true;
+            this.results = "Thank you for signing in " + theModel.getUserid();
+            return "LoginGood.xhtml";
+        }
+        
+        failedlogin++;
+        this.results = "Please try again" ;
+        return "LoginBad.xhtml";
+       
+         
     }
 }
